@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BitrixController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/bitrix/view', [BitrixController::class, 'view']);
+Route::get('/bitrix/install', [BitrixController::class, 'install']);
