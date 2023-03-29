@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Bitrix;
 use Illuminate\Support\Facades\Route;
 
 /*
