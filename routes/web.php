@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::match(['get', 'post'], '/bitrix/view', [BitrixController::class, 'view']);
-Route::match(['get', 'post'], '/bitrix/install', [BitrixController::class, 'install']);
+Route::controller(BitrixController::class)->prefix('/bitrix')->group(function(){
+    Route::match(['get', 'post'], '/view', 'view');
+    Route::match(['get', 'post'], '/install', 'install');
+});
+
