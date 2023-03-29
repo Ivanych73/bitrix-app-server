@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/bitrix/view', [BitrixController::class, 'view']);
-Route::get('/bitrix/install', [BitrixController::class, 'install']);
+Route::match(['get', 'post'], '/bitrix/view', [BitrixController::class, 'view']);
+Route::match(['get', 'post'], '/bitrix/install', [BitrixController::class, 'install']);

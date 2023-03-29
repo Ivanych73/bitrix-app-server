@@ -12,9 +12,10 @@ class BitrixController extends Controller
         return view('start');
     }
 
-    public function install()
+    public function install(Request $request)
     {
+        #dd($_REQUEST);
         $result = CRest::installApp();
-        return view('install', $result);
+        return view('install', ['result' => $result]);
     }
 }
