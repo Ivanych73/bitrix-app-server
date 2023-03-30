@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BitrixController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::controller(BitrixController::class)->prefix('/bitrix')->name('bitrix.')->
     Route::match(['get', 'post'], '/view', 'view')->name('view');
     Route::match(['get', 'post'], '/install', 'install')->name('install');
 });
+
+URL::forceScheme('https');

@@ -9,6 +9,7 @@ class BitrixController extends Controller
 {
     public function view(Request $request)
     {
+        #dd($request);
         return view('start');
     }
 
